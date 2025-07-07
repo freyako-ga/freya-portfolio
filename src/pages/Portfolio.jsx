@@ -7,10 +7,10 @@ function Portfolio() {
     { src: "/img/tag22.jpg", title: "Blues & oranges", link: "/Blues" },
     { src: "/img/m14.jpg", title: "Habibi", link: "/Morocco" },
     { src: "/img/text19.jpg", title: "Texture", link: "/Texture" },
-    { src: "/img/market9.jpg", title: "To The Markets", link: "/Markets" },
+    { src: "/img/text32.jpg", title: "Mother Nature", link: "/Mothernature" },
     { src: "/img/ita9.jpg", title: "PRONTO?", link: "/Italia" },
-    { src: "/img/ice7.jpg", title: "Mother Nature", link: "/Mothernature" },
     { src: "/img/comm10.jpg", title: "Commercial", link: "/Commercial" },
+    { src: "/img/market9.jpg", title: "To The Markets", link: "/Markets" },
   ];
 
   return (
