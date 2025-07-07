@@ -3,7 +3,7 @@ import "./Portfolio.css";
 function Portfolio() {
   const projects = [
     { src: "/img/tag9.jpg", title: "Skatepark", link: "/Skatepark" },
-    { src: "/img/anza44.jpg", title: "Observer", link: "/Observer" },
+    { src: "/img/ims7.jpg", title: "Observer", link: "/Observer" },
     { src: "/img/tag22.jpg", title: "Blues & oranges", link: "/Blues" },
     { src: "/img/m14.jpg", title: "Habibi", link: "/Morocco" },
     { src: "/img/text19.jpg", title: "Texture", link: "/Texture" },

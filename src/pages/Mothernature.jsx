@@ -2,14 +2,17 @@ import { useState } from "react";
 import "./Mothernature.css";
 
 const photos = [
+  "/img/nature3.jpg",
   "/img/ice4.jpg",
   "/img/nature8.jpg",
   "/img/nature9.jpg",
   "/img/nature10.jpg",
+  "/img/nature12.jpg",
+  "/img/nature13.jpg",
+  "/img/nature14.jpg",
   "/img/nature7.jpg",
   "/img/nature4.jpg",
   "/img/nature5.jpg",
-  "/img/nature3.jpg",
   "/img/ice2.jpg",
   "/img/text32.jpg",
   "/img/ice3.jpg",
