@@ -15,11 +15,12 @@ const photos = [
   "/img/anza10.jpg",
   "/img/anza44.jpg",
   "/img/anza2.jpg",
-  "/img/ims11.jpg",
-  "/img/ims1.jpg",
-  "/img/cat.jpg",
   "/img/tamri.jpg",
   "/img/observer2.jpg",
+  "/img/ims11.jpg",
+  "/img/ims1.jpg",
+  "/img/anza12.jpg",
+  "/img/cat.jpg",
 ]; 
 
 const ObserverGallery = () => {

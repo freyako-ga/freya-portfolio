@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./Mothernature.css";
 
 const photos = [
@@ -29,14 +29,6 @@ const photos = [
 const IcelandGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isEnlarged, setIsEnlarged] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % photos.length);
-    }, 4000); // 4 second fade
-
-    return () => clearInterval(interval);
-  }, []);
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + photos.length) % photos.length);
