@@ -1,0 +1,74 @@
+.skatepark-gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* 🔹 This ensures 2-per-row layout */
+.skatepark-paired {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+/* 🔹 Force exact 50% width */
+.skatepark-paired img,
+.skatepark-paired .skatepark-description {
+  width: calc(50% - 10px);
+  max-width: calc(50% - 10px);
+  box-sizing: border-box;
+}
+
+.skatepark-paired img {
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* 🔹 Description block */
+.skatepark-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-family: 'Georgia', serif;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* 🔹 Masonry grid after first 5 images */
+.skatepark-grid {
+  column-count: 3;
+  column-gap: 20px;
+  margin-top: 40px;
+}
+
+.skatepark-grid img {
+  width: 100%;
+  margin-bottom: 20px;
+  display: block;
+  object-fit: cover;
+  break-inside: avoid;
+}
+
+/* ✅ Responsive */
+@media (max-width: 900px) {
+  .skatepark-paired img,
+  .skatepark-paired .skatepark-description {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .skatepark-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .skatepark-grid {
+    column-count: 1;
+  }
+}

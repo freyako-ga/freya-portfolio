@@ -1,0 +1,42 @@
+.about-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    background-color: #8B0000; /* deep red */
+    color: white;
+    gap: 60px;
+  }
+  
+  .about-left {
+    flex: 1;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.6;
+    max-width: 600px;
+  }
+  
+  .about-left em {
+    font-style: italic;
+  }
+  
+  .about-right {
+    flex: 1;
+  }
+  
+  .about-right img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 0;
+  }
+  
+  /* Optional: Responsive design */
+  @media (max-width: 900px) {
+    .about-section {
+      flex-direction: column;
+      padding: 40px 20px;
+    }
+}

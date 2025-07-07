@@ -1,0 +1,74 @@
+.gallery-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.fade-image {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  cursor: zoom-in;
+}
+
+/* Arrows (fixed on screen edges and outside image area) */
+.fade-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.5); /* softer black */
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  font-weight: 300; /* thinner */
+  line-height: 1;
+  padding: 0;
+}
+
+.fade-arrow.left {
+  left: 20px;
+}
+
+.fade-arrow.right {
+  right: 20px;
+}
+
+
+/* Fullscreen Modal */
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: zoom-out;
+}
+
+.fullscreen-image {
+  max-height: 100vh;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
