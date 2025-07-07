@@ -1,39 +1,8 @@
-// import "./Italia.css";
-
-// const photos = [
-//   "/img/ita8.jpg",
-//   "/img/ita6.jpg",
-//   "/img/ita11.jpg",
-//   "/img/ita13.jpg",
-//   "/img/ita7.jpg",
-//   "/img/ita12.jpg",
-//   "/img/ita10.jpg",
-//   "/img/ita14.jpg",
-//   "/img/ita9.jpg",
-//   "/img/ita15.jpg",
-//   "/img/ita3.jpg",
-//   "/img/ita4.jpg",
-//   "/img/ita2.jpg",
-//   "/img/ita5.jpg",
-// ]; 
-
-// const ItaliaGallery = () => {
-//   return (
-// <div className="italia-grid">
-//   {photos.map((photo, index) => (
-//     <img key={index} src={photo} alt={`Italia ${index + 1}`} />
-//   ))}
-// </div>
-
-
-//   );
-// };
-
-// export default ItaliaGallery;
-
 
 import { useState } from "react";
 import "./Italia.css";
+import useLazyLoadImages from "../useLazyLoadImages"; // adjust path if needed
+ 
 
 const photos = [
   "/img/ita13.jpg",
@@ -58,6 +27,8 @@ const photos = [
 ];
 
 const ItaliaGallery = () => {
+  useLazyLoadImages();
+
   const [currentIndex, setCurrentIndex] = useState(8);
 
   const handlePrev = () => {
@@ -71,6 +42,7 @@ const ItaliaGallery = () => {
       prevIndex === photos.length - 1 ? 0 : prevIndex + 1
     );
   };
+  
 
   return (
     <div className="italia-page">
@@ -81,6 +53,7 @@ const ItaliaGallery = () => {
         </button>
         <img
           src={photos[currentIndex]}
+          loading="lazy"
           alt={`Italia Hero ${currentIndex + 1}`}
           className="carousel-image"
         />
