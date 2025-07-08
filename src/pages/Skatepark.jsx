@@ -1,5 +1,5 @@
 import "./Skatepark.css";
-import React from "react";
+import React, { useState } from "react";
 
 const photos = [
   "/img/skatepark11.jpg",
@@ -21,8 +21,7 @@ const photos = [
   "/img/skatepark.jpg",
   "/img/skatepark88.jpg",
   "/img/skatepark89.jpg", 
-   "/img/skatepark23.jpg",
-  // "/img/skatepark21.jpg",
+  "/img/skatepark23.jpg",
   "/img/tag9.jpg",
   "/img/skatepark20.jpg",
   "/img/tag18.jpg",
@@ -30,7 +29,6 @@ const photos = [
   "/img/tag17.jpg",
   "/img/tag11.jpg",
   "/img/tag31.jpg",
-  // "/img/tag32.jpg",
   "/img/tag24.jpg",
   "/img/tag13.jpg",
   "/img/skatepark29.jpg",
@@ -38,32 +36,69 @@ const photos = [
 ];
 
 const SkateparkGallery = () => {
+  const [isEnlarged, setIsEnlarged] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleImageClick = (index) => {
+    setCurrentIndex(index);
+    setIsEnlarged(true);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + photos.length) % photos.length);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % photos.length);
+  };
+
   return (
     <div className="skatepark-gallery">
-      {/* First 4 images as pairs in rows */}
       <div className="skatepark-paired">
-        <img src={photos[0]} alt="Skatepark 1" />
-        <img src={photos[1]} alt="Skatepark 2" />
+      <img loading="lazy" src={photos[0]} alt="Skatepark 1" onClick={() => handleImageClick(0)} />
+      <img loading="lazy"src={photos[1]} alt="Skatepark 2" onClick={() => handleImageClick(1)} />
       </div>
+
       <div className="skatepark-paired">
         <div className="skatepark-description">
           <p>
-            Perched on a hilltop overlooking the Atlantic, the Taghazout Skatepark is a vibrant collision of movement, color, and community. Here, kids, teens, and travelers gather in the golden hour — carving, flying, and cheering with a sense of freedom that feels both raw and deeply rooted. The graffiti-splashed bowls and dust-lined edges become more than a stage — they are a canvas for self-expression. In capturing this space, I wanted to preserve not just the energy of each trick, but the spirit of togetherness and youth culture uniquely alive in this corner of Morocco.
+            Perched on a hilltop overlooking the Atlantic, the Taghazout Skatepark is a vibrant collision of movement, color, and community...
           </p>
         </div>
-        <img src={photos[2]} alt="Skatepark 3" />
-      </div>
-      <div className="skatepark-paired">
-        <img src={photos[3]} alt="Skatepark 4" />
-        <img src={photos[4]} alt="Skatepark 5" />
+        <img loading="lazy"
+ src={photos[2]} alt="Skatepark 3" onClick={() => handleImageClick(2)} />
       </div>
 
-      {/* Remaining photos in masonry-style grid */}
+      <div className="skatepark-paired">
+      <img loading="lazy" src={photos[3]} alt="Skatepark 4" onClick={() => handleImageClick(3)} />
+      <img loading="lazy" src={photos[4]} alt="Skatepark 5" onClick={() => handleImageClick(4)} />
+      </div>
+
       <div className="skatepark-grid">
         {photos.slice(5).map((src, index) => (
-          <img key={index} src={src} alt={`Skatepark ${index + 6}`} />
+          <img loading="lazy"
+            key={index + 5}
+            src={src}
+            alt={`Skatepark ${index + 6}`}
+            onClick={() => handleImageClick(index + 5)}
+            className="grid-img"
+          />
         ))}
       </div>
+
+      {isEnlarged && (
+        <div className="fullscreen-overlay" onClick={() => setIsEnlarged(false)}>
+<img loading="lazy"
+            src={photos[currentIndex]}
+            alt="Full view"
+            className="fullscreen-image"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button className="close-button" onClick={() => setIsEnlarged(false)}>×</button>
+          <button className="arrow left" onClick={(e) => { e.stopPropagation(); handlePrev(); }}>❮</button>
+          <button className="arrow right" onClick={(e) => { e.stopPropagation(); handleNext(); }}>❯</button>
+        </div>
+      )}
     </div>
   );
 };

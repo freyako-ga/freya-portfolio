@@ -37,7 +37,7 @@ const BluesGallery = () => {
   return (
 <div className="blues-grid">
   {photos.map((photo, index) => (
-    <img key={index} src={photo} alt={`Morocco ${index + 1}`} />
+    <img loading="lazy" key={index} src={photo} alt={`Morocco ${index + 1}`} />
   ))}
 </div>
   );

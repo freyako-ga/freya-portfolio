@@ -2,22 +2,47 @@ import { useRef, useEffect, useState } from "react";
 import "./Texture.css";
 
 const photos = [
-  "/img/text19.jpg", "/img/text12.jpg", "/img/text21.jpg", "/img/text17.jpg",
-  "/img/text18.jpg", "/img/text28.jpg", "/img/text27.jpg",
-  "/img/text29.jpg", "/img/text30.jpg", "/img/text31.jpg", 
-  "/img/nature2.jpg",  "/img/text36.jpg","/img/text37.jpg", "/img/text38.jpg", "/img/text43.jpg",
- "/img/text39.jpg","/img/san8.jpg",
-  "/img/text15.jpg", "/img/clothes.jpg", "/img/text5.jpg", "/img/text11.jpg",
-  "/img/text23.jpg", "/img/clothes1.jpg", "/img/text24.jpg", 
+  "/img/text19.jpg", 
+  "/img/text12.jpg", 
+  "/img/text21.jpg",
+   "/img/text17.jpg",
+  "/img/text18.jpg", 
+  "/img/text28.jpg",
+   "/img/text27.jpg",
+  "/img/text29.jpg",
+   "/img/text30.jpg",
+   "/img/text31.jpg", 
+//   "/img/nature2.jpg",  
+  "/img/text36.jpg",
+  "/img/text37.jpg", 
+  "/img/text38.jpg", 
+  "/img/text43.jpg",
+ "/img/text39.jpg",
+ "/img/san8.jpg",
+  "/img/text15.jpg", 
+  "/img/clothes.jpg", 
+  "/img/text5.jpg", 
+  "/img/text11.jpg",
+  "/img/text23.jpg", 
+  "/img/clothes1.jpg",
+   "/img/text24.jpg", 
 //   "/img/text9.jpg",
-  "/img/detail.jpg", "/img/text22.jpg", "/img/chronological.jpg", "/img/text.jpg",
+  "/img/detail.jpg", 
+  "/img/text22.jpg", 
+  "/img/chronological.jpg", 
+  "/img/text.jpg",
 //   "/img/text26.jpg", 
 //   "/img/text7.jpg", 
 //   "/img/text2.jpg", 
 "/img/nature.jpg",
   "/img/text35.jpg",
-  "/img/text10.jpg",  "/img/text34.jpg", "/img/text8.jpg", "/img/text40.jpg",
-  "/img/text16.jpg",   "/img/text41.jpg","/img/text42.jpg",
+  "/img/text10.jpg",  
+  "/img/text34.jpg", 
+  "/img/text8.jpg", 
+  "/img/text40.jpg",
+  "/img/text16.jpg",  
+   "/img/text41.jpg",
+   "/img/text42.jpg",
 ];
 
 const TextureGallery = () => {
@@ -68,7 +93,7 @@ const TextureGallery = () => {
         }}
       >
         <div className="floating-label">(01.)</div>
-        <img src={src} className="floating-img" alt={`Floating ${index}`} />
+        <img loading="lazy" src={src} className="floating-img" alt={`Floating ${index}`} />
       </div>
     );
   })}
@@ -80,7 +105,7 @@ const TextureGallery = () => {
   <div className="texture-grid">
     {sliderImages.map((src, index) => (
       <div className="texture-grid-item" key={index}>
-        <img
+<img loading="lazy"
           src={src}
           alt={`Texture Grid ${index + 1}`}
           onClick={() => setSelectedImage(src)}
@@ -96,7 +121,7 @@ const TextureGallery = () => {
         <div className="texture-slider" ref={sliderRef}>
           {sliderImages.map((src, index) => (
             <div key={index} className="texture-slide">
-              <img
+<img loading="lazy"
                 src={src}
                 alt={`Texture ${index + 1}`}
                 onClick={() => setSelectedImage(src)}
@@ -113,7 +138,7 @@ const TextureGallery = () => {
       {/* Lightbox */}
       {selectedImage && (
         <div className="lightbox" onClick={() => setSelectedImage(null)}>
-          <img src={selectedImage} alt="Enlarged view" />
+<img loading="lazy" src={selectedImage} alt="Enlarged view" />
         </div>
       )}
     </>

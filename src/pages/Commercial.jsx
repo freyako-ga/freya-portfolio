@@ -4,6 +4,7 @@ import "./Commercial.css";
 const photos = [
   "/img/comm244.jpg",
   "/img/dj.jpg",
+  "/img/comm7.jpg",
   "/img/comm1.jpg",
   "/img/comm12.jpg",
   "/img/comm13.jpg",
@@ -16,7 +17,6 @@ const photos = [
   "/img/comm21.jpg",
   "/img/comm22.jpg",
   "/img/comm23.jpg",
-  "/img/comm24.jpg",
   "/img/comm25.jpg",
   "/img/comm26.jpg",
   "/img/yoga.jpg",
@@ -28,7 +28,8 @@ const photos = [
   "/img/ims5.jpg",
   "/img/comm4.jpg",
   "/img/comm8.jpg",
-  "/img/comm7.jpg",
+  "/img/comm32.jpg",
+  "/img/comm31.jpg",
   "/img/comm9.jpg",
   "/img/market16.jpg",
   "/img/comm3.jpg",
@@ -40,10 +41,8 @@ const photos = [
   "/img/place2.jpg",
   "/img/comm10.jpg",
   "/img/comm11.jpg",
-  "/img/comm31.jpg",
   "/img/mara.jpg",
   "/img/comm30.jpg",
-  "/img/comm32.jpg",
 ];
 
 const CommercialGallery = () => {
@@ -52,7 +51,7 @@ const CommercialGallery = () => {
   return (
     <div className="commercial-page">
       <div className="hero-image">
-        <img src="/img/comm246.jpg" alt="Hero commercial" />
+      <img loading="lazy" src="/img/comm246.jpg" alt="Hero commercial" />
       </div>
 
       <div className="commercial-description">
@@ -64,7 +63,7 @@ const CommercialGallery = () => {
 
       <div className="commercial-grid">
         {photos.map((photo, index) => (
-          <img
+          <img loading="lazy"
             key={index}
             src={photo}
             alt={`Commercial ${index + 1}`}
@@ -75,7 +74,7 @@ const CommercialGallery = () => {
 
       {selectedImage && (
         <div className="lightbox" onClick={() => setSelectedImage(null)}>
-          <img src={selectedImage} alt="Enlarged view" />
+<img loading="lazy" src={selectedImage} alt="Enlarged view" />
         </div>
       )}
     </div>

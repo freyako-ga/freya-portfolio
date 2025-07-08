@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Morocco.css";
 
 const photos = [
   "/img/fes5.jpg",
+  "/img/mara1.jpg",
   "/img/tag36.jpg",
   "/img/boy.jpg",
   "/img/m15.jpg",
@@ -51,50 +52,77 @@ const photos = [
 ];
 
 const MoroccoGallery = () => {
-  const [currentIndex, setCurrentIndex] = useState(5); // pick a starting image
+  const [isEnlarged, setIsEnlarged] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const fadingImages = ["/img/m14.jpg", "/img/m15.jpg"];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % fadingImages.length);
+    }, 4000); // 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleImageClick = (index) => {
+    setCurrentIndex(index);
+    setIsEnlarged(true);
+  };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? photos.length - 1 : prevIndex - 1
-    );
+    setCurrentIndex((prev) => (prev - 1 + photos.length) % photos.length);
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === photos.length - 1 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex((prev) => (prev + 1) % photos.length);
   };
 
   return (
     <div className="morocco-page">
-      {/* Hero Carousel */}
-      <div className="hero-carousel">
-        <button className="carousel-button left" onClick={handlePrev}>
-          &#10094;
-        </button>
-        <img
-          src={photos[currentIndex]}
-          alt={`Morocco Hero ${currentIndex + 1}`}
-          className="carousel-image"
-        />
-        <button className="carousel-button right" onClick={handleNext}>
-          &#10095;
-        </button>
-      </div>
+      <div className="fading-hero-container">
+        {fadingImages.map((src, index) => (
+          <img loading="lazy"
 
-      {/* Description */}
-      <div className="morocco-description">
-        <p>
-          A soulful wander through Moroccan streets, sandy markets, lush courtyards, and ocean edges — warm textures, quiet moments, and sunlit stories.
-        </p>
-      </div>
-
-      {/* Grid */}
-      <div className="morocco-grid">
-        {photos.map((photo, index) => (
-          <img key={index} src={photo} alt={`Morocco ${index + 1}`} />
+            key={index}
+            src={src}
+            className={`fading-hero-image ${index === currentImageIndex ? "active" : ""}`}
+            alt={`Hero ${index + 1}`}
+          />
         ))}
       </div>
+
+      <div className="morocco-description">
+        A land of warm light and deeper tones, of rich texture and feeling.
+      </div>
+
+      <div className="morocco-grid">
+        {photos.map((src, index) => (
+          <img loading="lazy"
+
+            key={index}
+            src={src}
+            alt={`Morocco ${index + 1}`}
+            onClick={() => handleImageClick(index)}
+            className="grid-img"
+          />
+        ))}
+      </div>
+
+      {isEnlarged && (
+        <div className="fullscreen-overlay" onClick={() => setIsEnlarged(false)}>
+          <img loading="lazy"
+
+            src={photos[currentIndex]}
+            alt="Full view"
+            className="fullscreen-image"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button className="close-button" onClick={() => setIsEnlarged(false)}>×</button>
+          <button className="arrow left" onClick={(e) => { e.stopPropagation(); handlePrev(); }}>❮</button>
+          <button className="arrow right" onClick={(e) => { e.stopPropagation(); handleNext(); }}>❯</button>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,74 +1,81 @@
-.gallery-wrapper {
-  position: relative;
-  max-width: 1000px;
-  margin: 100px auto;
-  padding: 0 20px;
+.mothernature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
-.fade-image {
+.photo-wrapper img {
   width: 100%;
   height: auto;
-  max-height: 90vh;
-  object-fit: contain;
+  object-fit: cover;
+  max-height: 700px;
+  border-radius: 0;
   display: block;
-  margin: 0 auto;
-  cursor: zoom-in;
-}
-
-/* Arrows (fixed on screen edges and outside image area) */
-.fade-arrow {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  color: rgba(0, 0, 0, 0.5); /* softer black */
-  background: none;
-  border: none;
   cursor: pointer;
-  z-index: 999;
-  font-weight: 300; /* thinner */
-  line-height: 1;
-  padding: 0;
 }
 
-.fade-arrow.left {
-  left: 20px;
-}
+/* ---------------------- FULLSCREEN OVERLAY ---------------------- */
 
-.fade-arrow.right {
-  right: 20px;
-}
-
-
-/* Fullscreen Modal */
 .fullscreen-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(10, 10, 10, 0.95);
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-  cursor: zoom-out;
+  overflow: hidden;
 }
 
+/* Enlarged image */
 .fullscreen-image {
-  max-height: 100vh;
-  max-width: 100%;
+  max-width: 90vw;
+  max-height: 90vh;
   object-fit: contain;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  font-weight: 100;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  z-index: 1010;
+  padding: 10px;
+  user-select: none;
+}
+
+.arrow.left {
+  left: 20px;
+}
+
+.arrow.right {
+  right: 20px;
+}
+
+/* Close (X) button */
 .close-button {
   position: absolute;
   top: 20px;
   right: 30px;
   font-size: 2rem;
-  color: white;
-  background: transparent;
+  font-weight: 100;
+  background: none;
   border: none;
+  color: black;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 1010;
+  user-select: none;
 }

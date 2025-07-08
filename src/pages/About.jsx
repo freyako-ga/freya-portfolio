@@ -15,7 +15,7 @@ function Homepage() {
         </p>
       </div>
       <div className="about-right">
-        <img src="/img/about3.jpg" alt="Freya" />
+      <img loading="lazy" src="/img/about3.jpg" alt="Freya" />
       </div>
     </div>
   );

@@ -28,7 +28,8 @@ const ObserverGallery = () => {
       <div className="observer-grid">
         {photos.map((photo, index) => (
           <React.Fragment key={index}>
-            <img src={photo} alt={`Observer ${index + 1}`} />
+<img loading="lazy"
+             src={photo} alt={`Observer ${index + 1}`} />
             {index === 1 && (
               <div className="observer-description">
                 <p>

@@ -40,45 +40,29 @@
   object-fit: cover;
   break-inside: avoid;
 }
-.hero-carousel {
+
+
+.fading-hero-container {
   position: relative;
   width: 100%;
+  height: 1200px;
+  max-height: 1200px;
   margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-/* Image remains in the center */
-.carousel-image {
-  max-width: 100%;
-  height: auto;
-  max-height: 500px;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Arrows outside the image */
-.carousel-button {
+.fading-hero-image {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2.5rem;
-  color: black;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 10;
-  padding: 0;
-  line-height: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 1000px;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
 }
 
-/* Positioned OUTSIDE of the image container */
-.carousel-button.left {
-  left: -40px; /* move further outside as needed */
-}
-
-.carousel-button.right {
-  right: -40px;
+.fading-hero-image.active {
+  opacity: 1;
+  z-index: 1;
 }
