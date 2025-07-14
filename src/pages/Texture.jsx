@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Texture.css";
+import LazyImage from "../components/LazyImage.jsx";
+
 
 const photos = [
   "/img/text38.jpg", 
@@ -59,8 +61,10 @@ const TextureGallery = () => {
   return (
     <div className="texture-gallery">
       <div className="texture-paired">
-        <img src={photos[0]} alt="Texture 1" onClick={() => handleImageClick(0)} loading="lazy" />
-        <img src={photos[1]} alt="Texture 2" onClick={() => handleImageClick(1)} loading="lazy" />
+        <LazyImage
+ src={photos[0]} alt="Texture 1" onClick={() => handleImageClick(0)} loading="lazy" />
+        <LazyImage
+ src={photos[1]} alt="Texture 2" onClick={() => handleImageClick(1)} loading="lazy" />
       </div>
 
       <div className="texture-paired">
@@ -69,17 +73,21 @@ const TextureGallery = () => {
             A study in surface, repetition and quiet imperfection — the Texture collection explores subtle details and tactile beauty.
           </p>
         </div>
-        <img src={photos[2]} alt="Texture 3" onClick={() => handleImageClick(2)} loading="lazy" />
+        <LazyImage
+ src={photos[2]} alt="Texture 3" onClick={() => handleImageClick(2)} loading="lazy" />
       </div>
 
       <div className="texture-paired">
-        <img src={photos[3]} alt="Texture 4" onClick={() => handleImageClick(3)} loading="lazy" />
-        <img src={photos[4]} alt="Texture 5" onClick={() => handleImageClick(4)} loading="lazy" />
+        <LazyImage
+ src={photos[3]} alt="Texture 4" onClick={() => handleImageClick(3)} loading="lazy" />
+        <LazyImage
+ src={photos[4]} alt="Texture 5" onClick={() => handleImageClick(4)} loading="lazy" />
       </div>
 
       <div className="texture-grid">
         {photos.slice(5).map((src, index) => (
-          <img
+          <LazyImage
+
             key={index + 5}
             src={src}
             alt={`Texture ${index + 6}`}
@@ -92,7 +100,8 @@ const TextureGallery = () => {
 
       {isEnlarged && (
         <div className="fullscreen-overlay" onClick={() => setIsEnlarged(false)}>
-          <img
+          <LazyImage
+
             src={photos[currentIndex]}
             alt="Full view"
             className="fullscreen-image"

@@ -1,4 +1,5 @@
 import "./Portfolio.css";
+import LazyImage from "../components/LazyImage";
 
 function Portfolio() {
   const projects = [
@@ -21,7 +22,8 @@ function Portfolio() {
         <div key={index} className="grid-item">
           <a href={project.link} className="image-link">
             <div className="image-wrapper">
-            <img loading="lazy"
+            <LazyImage
+ loading="lazy"
 src={project.src} alt={project.title} />
               <div className="overlay">
                 <span className="overlay-title">{project.title}</span>

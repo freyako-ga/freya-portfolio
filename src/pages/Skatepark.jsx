@@ -1,5 +1,6 @@
 import "./Skatepark.css";
 import React, { useState } from "react";
+import LazyImage from "../components/LazyImage";
 
 const photos = [
   "/img/skatepark11.jpg",
@@ -62,8 +63,10 @@ const SkateparkGallery = () => {
   return (
     <div className="skatepark-gallery">
       <div className="skatepark-paired">
-      <img loading="lazy" src={photos[0]} alt="Skatepark 1" onClick={() => handleImageClick(0)} />
-      <img loading="lazy"src={photos[1]} alt="Skatepark 2" onClick={() => handleImageClick(1)} />
+      <LazyImage
+ loading="lazy" src={photos[0]} alt="Skatepark 1" onClick={() => handleImageClick(0)} />
+      <LazyImage
+ loading="lazy"src={photos[1]} alt="Skatepark 2" onClick={() => handleImageClick(1)} />
       </div>
 
       <div className="skatepark-paired">
@@ -72,18 +75,22 @@ const SkateparkGallery = () => {
             Perched on a hilltop overlooking the Atlantic, the Taghazout Skatepark is a vibrant collision of movement, color, and community...
           </p>
         </div>
-        <img loading="lazy"
+        <LazyImage
+ loading="lazy"
  src={photos[2]} alt="Skatepark 3" onClick={() => handleImageClick(2)} />
       </div>
 
       <div className="skatepark-paired">
-      <img loading="lazy" src={photos[3]} alt="Skatepark 4" onClick={() => handleImageClick(3)} />
-      <img loading="lazy" src={photos[4]} alt="Skatepark 5" onClick={() => handleImageClick(4)} />
+      <LazyImage
+ loading="lazy" src={photos[3]} alt="Skatepark 4" onClick={() => handleImageClick(3)} />
+      <LazyImage
+ loading="lazy" src={photos[4]} alt="Skatepark 5" onClick={() => handleImageClick(4)} />
       </div>
 
       <div className="skatepark-grid">
         {photos.slice(5).map((src, index) => (
-          <img loading="lazy"
+          <LazyImage
+ loading="lazy"
             key={index + 5}
             src={src}
             alt={`Skatepark ${index + 6}`}
@@ -95,7 +102,8 @@ const SkateparkGallery = () => {
 
       {isEnlarged && (
         <div className="fullscreen-overlay" onClick={() => setIsEnlarged(false)}>
-<img loading="lazy"
+<LazyImage
+ loading="lazy"
             src={photos[currentIndex]}
             alt="Full view"
             className="fullscreen-image"

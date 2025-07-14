@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Morocco.css";
+import LazyImage from "../components/LazyImage";
 
 const photos = [
   "/img/tag36.jpg",
@@ -103,7 +104,8 @@ const MoroccoGallery = () => {
     <div className="morocco-page">
       <div className="fading-hero-container">
         {fadingImages.map((src, index) => (
-          <img loading="lazy"
+          <LazyImage
+ loading="lazy"
 
             key={index}
             src={src}
@@ -119,7 +121,8 @@ const MoroccoGallery = () => {
 
       <div className="morocco-grid">
         {photos.map((src, index) => (
-          <img loading="lazy"
+          <LazyImage
+ loading="lazy"
 
             key={index}
             src={src}
@@ -132,7 +135,8 @@ const MoroccoGallery = () => {
 
       {isEnlarged && (
         <div className="fullscreen-overlay" onClick={() => setIsEnlarged(false)}>
-          <img loading="lazy"
+          <LazyImage
+ loading="lazy"
 
             src={photos[currentIndex]}
             alt="Full view"

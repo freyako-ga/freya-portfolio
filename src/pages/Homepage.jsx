@@ -1,4 +1,4 @@
-
+import LazyImage from "../components/LazyImage";
 
 function Homepage() {
   return (
@@ -6,7 +6,8 @@ function Homepage() {
       <div className="content-wrapper">
         <div className="inner-wrapper">
           <div className="left-image">
-            <img src="/img/m22.jpg" alt="Description" />
+            <LazyImage
+ src="/img/m22.jpg" alt="Description" />
           </div>
           <div className="right-content">
             <h1>Freya</h1>

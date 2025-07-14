@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Blues.css";
+import LazyImage from "../components/LazyImage";
+
 
 const photos = [
   "/img/blue7.jpg",
@@ -93,9 +95,8 @@ const BluesGallery = () => {
     <>
       <div className="blues-grid">
         {photos.map((photo, index) => (
-          <img
-            loading="lazy"
-            key={index}
+        <LazyImage
+        key={index}
             src={photo}
             alt={`Morocco ${index + 1}`}
             onClick={() => handleImageClick(index)}
@@ -116,7 +117,8 @@ const BluesGallery = () => {
             onMouseDown={handleMouseDown}
             onClick={handleZoomToggle}
           >
-            <img
+            <LazyImage
+
               src={photos[currentIndex]}
               alt="Full view"
               className={`fullscreen-image ${isZoomed ? "zoomed" : ""}`}

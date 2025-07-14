@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Commercial.css";
+import LazyImage from "../components/LazyImage";
 
 const photos = [
   "/img/comm244.jpg",
@@ -55,7 +56,8 @@ const CommercialGallery = () => {
   return (
     <div className="commercial-page">
       <div className="hero-image">
-      <img loading="lazy" src="/img/tene6.jpg" alt="Hero commercial" />
+      <LazyImage
+ loading="lazy" src="/img/tene6.jpg" alt="Hero commercial" />
       </div>
 
       <div className="commercial-description">
@@ -67,7 +69,8 @@ const CommercialGallery = () => {
 
       <div className="commercial-grid">
         {photos.map((photo, index) => (
-          <img loading="lazy"
+          <LazyImage
+ loading="lazy"
             key={index}
             src={photo}
             alt={`Commercial ${index + 1}`}
@@ -78,7 +81,8 @@ const CommercialGallery = () => {
 
       {selectedImage && (
         <div className="lightbox" onClick={() => setSelectedImage(null)}>
-<img loading="lazy" src={selectedImage} alt="Enlarged view" />
+<LazyImage
+ loading="lazy" src={selectedImage} alt="Enlarged view" />
         </div>
       )}
     </div>

@@ -1,4 +1,5 @@
 import "./People.css";
+import LazyImage from "../components/LazyImage";
 
 const photos = [
   "/img/leah.jpg",
@@ -21,7 +22,8 @@ const PeopleGallery = () => {
   return (
 <div className="morocco-grid">
   {photos.map((photo, index) => (
-    <img loading="lazy"
+    <LazyImage
+ loading="lazy"
 key={index} src={photo} alt={`Morocco ${index + 1}`} />
   ))}
 </div>

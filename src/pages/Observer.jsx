@@ -1,5 +1,6 @@
 import "./Observer.css";
 import React from "react";
+import LazyImage from "../components/LazyImage";
 
 
 const photos = [
@@ -29,7 +30,8 @@ const ObserverGallery = () => {
       <div className="observer-grid">
         {photos.map((photo, index) => (
           <React.Fragment key={index}>
-<img loading="lazy"
+<LazyImage
+ loading="lazy"
              src={photo} alt={`Observer ${index + 1}`} />
             {index === 1 && (
               <div className="observer-description">

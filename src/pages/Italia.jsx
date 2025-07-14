@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Italia.css";
+import LazyImage from "../components/LazyImage";
 
 const fadingImages = ["/img/ita12.jpg", "/img/ita10.jpg", "/img/ita14.jpg", "/img/ita3.jpg",];
 
@@ -57,7 +58,8 @@ const ItaliaGallery = () => {
       {/* Fading Hero Section */}
       <div className="fading-hero-container">
         {fadingImages.map((src, index) => (
-          <img loading="lazy"
+          <LazyImage
+ loading="lazy"
             key={index}
             src={src}
             className={`fading-hero-image ${index === currentFadeIndex ? "active" : ""}`}
@@ -77,7 +79,8 @@ const ItaliaGallery = () => {
       {/* Grid */}
       <div className="italia-grid">
         {photos.map((photo, index) => (
-          <img loading="lazy"
+          <LazyImage
+ loading="lazy"
             key={index}
             src={photo}
             alt={`Italia ${index + 1}`}
@@ -90,7 +93,8 @@ const ItaliaGallery = () => {
       {/* Fullscreen Overlay */}
       {isEnlarged && (
         <div className="fullscreen-overlay" onClick={() => setIsEnlarged(false)}>
-          <img loading="lazy"
+          <LazyImage
+ loading="lazy"
 
             src={photos[currentIndex]}
             alt="Full view"

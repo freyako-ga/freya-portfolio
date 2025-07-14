@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useRef } from "react";
 import "./Mothernature.css";
+import LazyImage from "../components/LazyImage";
 
 const photos = [
   "/img/nature3.jpg",
@@ -101,7 +102,8 @@ const handleImageClick = (e) => {
       <div className="mothernature-grid">
         {photos.map((src, index) => (
           <div className="photo-wrapper" key={index}>
-            <img loading="lazy"
+            <LazyImage
+ loading="lazy"
 
               src={src}
               alt={`Mothernature ${index + 1}`}
@@ -133,7 +135,8 @@ const handleImageClick = (e) => {
   onMouseUp={handleMouseUp}
   onMouseLeave={handleMouseUp}
 >
-  <img
+  <LazyImage
+
     src={photos[currentIndex]}
     alt={`Full View ${currentIndex + 1}`}
     className={`fullscreen-image ${isZoomed ? "zoomed" : ""}`}
