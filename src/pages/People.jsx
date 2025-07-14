@@ -13,6 +13,8 @@ const photos = [
   "/img/leah10.jpg",
   "/img/leah11.jpg",
   "/img/leah12.jpg",
+  "/img/light.jpg",
+  "/img/feet.jpg",
 ]; 
 
 const PeopleGallery = () => {

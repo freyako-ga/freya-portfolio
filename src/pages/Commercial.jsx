@@ -27,7 +27,7 @@ const photos = [
   "/img/ims2.jpg",
   "/img/ims3.jpg",
   "/img/comm33.jpg",
-  "/img/ims44.jpg",
+  // "/img/ims44.jpg",
   "/img/ims5.jpg",
   "/img/comm4.jpg",
   "/img/comm8.jpg",
@@ -46,6 +46,7 @@ const photos = [
   "/img/mara.jpg",
   "/img/comm30.jpg",
   "/img/ims.jpg",
+  "/img/anzasurf.jpg",
 ];
 
 const CommercialGallery = () => {

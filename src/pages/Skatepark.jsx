@@ -39,6 +39,7 @@ const photos = [
   "/img/skatepark32.jpg",
   "/img/skatepark33.jpg",
   "/img/skatepark35.jpg",
+  "/img/skateboard.jpg",
 ];
 
 const SkateparkGallery = () => {
