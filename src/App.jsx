@@ -4,7 +4,7 @@ import Homepage from './pages/Homepage';
 import Portfolio from './pages/Portfolio';
 import About from "./pages/About";
 import Morocco from "./pages/Morocco";
-import Markets from "./pages/Markets";
+import People from "./pages/People";
 import Italia from "./pages/Italia";
 import Mothernature from "./pages/Mothernature";
 import Commercial from "./pages/Commercial";
@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={<Homepage />} /> 
         <Route path="/pages/Portfolio" element={<Portfolio />} /> 
         <Route path="/morocco" element={<Morocco />} />
-        <Route path="/markets" element={<Markets />} />
+        <Route path="/people" element={<People />} />
         <Route path="/italia" element={<Italia />} />
         <Route path="/mothernature" element={<Mothernature />} />
         <Route path="/commercial" element={<Commercial />} />

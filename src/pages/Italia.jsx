@@ -11,9 +11,10 @@ const photos = [
   "/img/ita7.jpg",
   "/img/ita12.jpg",
   "/img/ita10.jpg",
+  "/img/ita18.jpg",
   "/img/ita9.jpg",
   "/img/ita3.jpg",
-  "/img/ita4.jpg",
+  "/img/ita22.jpg",
   "/img/ita2.jpg",
   "/img/ita16.jpg",
   "/img/ita11.jpg",
@@ -22,6 +23,7 @@ const photos = [
   "/img/ita19.jpg",
   "/img/ita20.jpg",
   "/img/ita21.jpg",
+  "/img/ita4.jpg",
   "/img/ita14.jpg",
 ];
 

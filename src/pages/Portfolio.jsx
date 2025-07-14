@@ -10,7 +10,7 @@ function Portfolio() {
     { src: "/img/text32.jpg", title: "Mother Nature", link: "/Mothernature" },
     { src: "/img/ita9.jpg", title: "PRONTO?", link: "/Italia" },
     { src: "/img/comm10.jpg", title: "Commercial", link: "/Commercial" },
-    { src: "/img/market9.jpg", title: "To The Markets", link: "/Markets" },
+    { src: "/img/market9.jpg", title: "People", link: "/People" },
   ];
 
   return (

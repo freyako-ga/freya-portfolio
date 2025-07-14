@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useRef } from "react";
 import "./Mothernature.css";
 
 const photos = [
@@ -21,16 +22,59 @@ const photos = [
 
   "/img/ice1.jpg",
   "/img/ice7.jpg",
-  "/img/ice9.jpg",
+  "/img/flowers1.jpg",
   "/img/ice8.jpg",
   "/img/ice10.jpg",
   "/img/ice11.jpg",
   "/img/ice12.jpg",
+  "/img/nature17.jpg",
+  "/img/nature18.jpg",
+  "/img/nature14.jpg",
+  "/img/lanzz.jpg",
+  "/img/ice9.jpg",
+  "/img/fes40.jpg",
 ];
 
 const MothernatureGallery = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
+const [isOpen, setIsOpen] = useState(false);
+const [currentIndex, setCurrentIndex] = useState(0);
+const zoomRef = useRef(null);
+const [zoom, setZoom] = useState(false);
+const [zoomStyle, setZoomStyle] = useState({});
+const [isZoomed, setIsZoomed] = useState(false);
+const [position, setPosition] = useState({ x: 0, y: 0 });
+const [dragging, setDragging] = useState(false);
+const [start, setStart] = useState({ x: 0, y: 0 });
+
+
+const handleMouseDown = (e) => {
+  if (!isZoomed) return;
+  setDragging(true);
+  setStart({ x: e.clientX - position.x, y: e.clientY - position.y });
+};
+
+const handleMouseMove = (e) => {
+  if (!dragging) return;
+  const x = e.clientX - start.x;
+  const y = e.clientY - start.y;
+  setPosition({ x, y });
+};
+
+const handleMouseUp = () => {
+  setDragging(false);
+};
+
+const handleImageClick = (e) => {
+  e.stopPropagation();
+  if (isZoomed) {
+    // Zoom out
+    setIsZoomed(false);
+    setPosition({ x: 0, y: 0 });
+  } else {
+    // Zoom in
+    setIsZoomed(true);
+  }
+};
 
   const openOverlay = (index) => {
     setCurrentIndex(index);
@@ -39,8 +83,9 @@ const MothernatureGallery = () => {
 
   const closeOverlay = () => {
     setIsOpen(false);
+    setIsZoomed(false);
   };
-
+  
   const prevImage = () => {
     setCurrentIndex((prev) => (prev - 1 + photos.length) % photos.length);
   };
@@ -48,6 +93,8 @@ const MothernatureGallery = () => {
   const nextImage = () => {
     setCurrentIndex((prev) => (prev + 1) % photos.length);
   };
+
+
 
   return (
     <>
@@ -66,6 +113,10 @@ const MothernatureGallery = () => {
       </div>
 
       {isOpen && (
+
+
+
+
         <div className="fullscreen-overlay" onClick={closeOverlay}>
           <button className="close-button" onClick={closeOverlay}>
             ×
@@ -73,13 +124,30 @@ const MothernatureGallery = () => {
           <button className="arrow left" onClick={(e) => { e.stopPropagation(); prevImage(); }}>
             ❮
           </button>
-          <img loading="lazy"
 
-            src={photos[currentIndex]}
-            alt={`Full View ${currentIndex + 1}`}
-            className="fullscreen-image"
-            onClick={(e) => e.stopPropagation()}
-          />
+
+          <div
+  className="zoom-container"
+  onMouseDown={handleMouseDown}
+  onMouseMove={handleMouseMove}
+  onMouseUp={handleMouseUp}
+  onMouseLeave={handleMouseUp}
+>
+  <img
+    src={photos[currentIndex]}
+    alt={`Full View ${currentIndex + 1}`}
+    className={`fullscreen-image ${isZoomed ? "zoomed" : ""}`}
+    onClick={handleImageClick}
+    style={{
+      transform: isZoomed
+        ? `scale(2) translate(${position.x / 2}px, ${position.y / 2}px)`
+        : "scale(1) translate(0, 0)",
+      cursor: isZoomed ? "zoom-out" : "zoom-in",
+    }}
+  />
+</div>
+
+
           <button className="arrow right" onClick={(e) => { e.stopPropagation(); nextImage(); }}>
             ❯
           </button>

@@ -1,17 +1,23 @@
-.about-section {
+/* .about-section {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 80px;
-    background-color: #8B0000; /* deep red */
+    background-color: #8B0000;
     color: white;
     gap: 60px;
   }
   
+  .freya-intro {
+    font-size: 1.8rem; 
+    font-weight: bold;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+  }
   .about-left {
     flex: 1;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     line-height: 1.6;
     max-width: 600px;
@@ -33,10 +39,64 @@
     border-radius: 0;
   }
   
-  /* Optional: Responsive design */
+
   @media (max-width: 900px) {
     .about-section {
       flex-direction: column;
       padding: 40px 20px;
     }
+} */
+
+
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #8B0000;
+  color: #e0e0e0;
+  padding: 40px;
+  font-family: 'Inter', sans-serif;
+}
+
+.about-left {
+  flex: 1;
+  max-width: 600px;
+  padding-right: 20px;
+}
+
+.about-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.about-right img {
+  max-width: 100%;
+  height: auto;
+}
+
+.freya-intro {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 32px;
+}
+
+.about-text {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.print-info {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-top: 32px;
+  color: #cccccc;
+}
+
+.print-info a {
+  color: #2ee59d;
+  text-decoration: underline;
 }

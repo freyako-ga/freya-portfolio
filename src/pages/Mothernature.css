@@ -7,6 +7,7 @@
   margin: 0 auto;
 }
 
+/* Grid thumbnails */
 .photo-wrapper img {
   width: 100%;
   height: auto;
@@ -14,11 +15,10 @@
   max-height: 700px;
   border-radius: 0;
   display: block;
-  cursor: pointer;
+  cursor: pointer; /* shows hand on hover */
 }
 
-/* ---------------------- FULLSCREEN OVERLAY ---------------------- */
-
+/* Fullscreen overlay */
 .fullscreen-overlay {
   position: fixed;
   top: 0;
@@ -33,12 +33,28 @@
   overflow: hidden;
 }
 
-/* Enlarged image */
+.zoom-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+}
+
 .fullscreen-image {
   max-width: 90vw;
   max-height: 90vh;
   object-fit: contain;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+
+
+/* When zoomed in */
+.fullscreen-image.zoomed {
+  transform: scale(2);
+  cursor: zoom-out;
 }
 
 /* Arrows */

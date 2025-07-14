@@ -1,147 +1,110 @@
-import { useRef, useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Texture.css";
 
 const photos = [
-  "/img/text19.jpg", 
-  "/img/text12.jpg", 
-  "/img/text21.jpg",
-   "/img/text17.jpg",
+  "/img/text38.jpg", 
+  "/img/san8.jpg",
+  "/img/clothes.jpg", 
+  "/img/text40.jpg",
+  "/img/text17.jpg",
   "/img/text18.jpg", 
   "/img/text28.jpg",
-   "/img/text27.jpg",
+  "/img/tene5.jpg",
+  "/img/text27.jpg",
   "/img/text29.jpg",
-   "/img/text30.jpg",
-   "/img/text31.jpg", 
-//   "/img/nature2.jpg",  
+  "/img/text30.jpg",
+  "/img/text31.jpg", 
   "/img/text36.jpg",
   "/img/text37.jpg", 
-  "/img/text38.jpg", 
+  "/img/text19.jpg", 
   "/img/text43.jpg",
- "/img/text39.jpg",
- "/img/san8.jpg",
+  "/img/text39.jpg",
+  "/img/text12.jpg", 
   "/img/text15.jpg", 
-  "/img/clothes.jpg", 
+  "/img/text21.jpg",
   "/img/text5.jpg", 
   "/img/text11.jpg",
   "/img/text23.jpg", 
   "/img/clothes1.jpg",
-   "/img/text24.jpg", 
-//   "/img/text9.jpg",
+  "/img/text24.jpg", 
   "/img/detail.jpg", 
   "/img/text22.jpg", 
   "/img/chronological.jpg", 
-  "/img/text.jpg",
-//   "/img/text26.jpg", 
-//   "/img/text7.jpg", 
-//   "/img/text2.jpg", 
-"/img/nature.jpg",
+  "/img/nature.jpg",
   "/img/text35.jpg",
   "/img/text10.jpg",  
   "/img/text34.jpg", 
-  "/img/text8.jpg", 
-  "/img/text40.jpg",
   "/img/text16.jpg",  
-   "/img/text41.jpg",
-   "/img/text42.jpg",
+  "/img/text41.jpg",
+  "/img/text42.jpg",
 ];
 
 const TextureGallery = () => {
-  const floatingImages = photos.slice(0, 12);
-  const gridImages = photos;  // next 16 for grid
-  const sliderImages = photos;  // remaining for slider
+  const [isEnlarged, setIsEnlarged] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const sliderRef = useRef(null);
-  const indicatorRef = useRef(null);
-  const [selectedImage, setSelectedImage] = useState(null);
-
-  const handleScroll = () => {
-    const slider = sliderRef.current;
-    const indicator = indicatorRef.current;
-    if (!slider || !indicator) return;
-
-    const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-    const scrollRatio = maxScrollLeft === 0 ? 0 : slider.scrollLeft / maxScrollLeft;
-    const trackWidth = indicator.parentElement.clientWidth - indicator.clientWidth;
-    indicator.style.transform = `translateX(${scrollRatio * trackWidth}px)`;
+  const handleImageClick = (index) => {
+    setCurrentIndex(index);
+    setIsEnlarged(true);
   };
 
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (slider) slider.addEventListener("scroll", handleScroll);
-    return () => slider && slider.removeEventListener("scroll", handleScroll);
-  }, []);
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + photos.length) % photos.length);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % photos.length);
+  };
 
   return (
-    <>
-<div className="floating-gallery">
-  <div className="texture-title">TEXTURE</div>
-  {floatingImages.map((src, index) => {
-    // Control vertical & horizontal staggering
-    const verticalStep = 22;
-    const topOffset = (index % 4) * verticalStep + (index % 2 === 0 ? 0 : 10);
-    const horizontalBase = (index % 6) * 16 + 2;
-    const horizontalNudge = index % 2 === 0 ? -3 : 3;
-
-    return (
-      <div
-        key={index}
-        className="floating-image-wrapper"
-        style={{
-          top: `${topOffset}%`,
-          left: `calc(${horizontalBase}% + ${horizontalNudge}px)`,
-          animationDelay: `${index * 1.4}s`,
-        }}
-      >
-        <div className="floating-label">(01.)</div>
-        <img loading="lazy" src={src} className="floating-img" alt={`Floating ${index}`} />
+    <div className="texture-gallery">
+      <div className="texture-paired">
+        <img src={photos[0]} alt="Texture 1" onClick={() => handleImageClick(0)} loading="lazy" />
+        <img src={photos[1]} alt="Texture 2" onClick={() => handleImageClick(1)} loading="lazy" />
       </div>
-    );
-  })}
-</div>
 
-
-      {/* 📸 4-Column Grid */}
-      <div className="texture-grid-section">
-  <div className="texture-grid">
-    {sliderImages.map((src, index) => (
-      <div className="texture-grid-item" key={index}>
-<img loading="lazy"
-          src={src}
-          alt={`Texture Grid ${index + 1}`}
-          onClick={() => setSelectedImage(src)}
-        />
-      </div>
-    ))}
-  </div>
-</div>
-
-
-      {/* Horizontal Slider */}
-      <div className="texture-slider-wrapper">
-        <div className="texture-slider" ref={sliderRef}>
-          {sliderImages.map((src, index) => (
-            <div key={index} className="texture-slide">
-<img loading="lazy"
-                src={src}
-                alt={`Texture ${index + 1}`}
-                onClick={() => setSelectedImage(src)}
-              />
-            </div>
-          ))}
+      <div className="texture-paired">
+        <div className="texture-description">
+          <p>
+            A study in surface, repetition and quiet imperfection — the Texture collection explores subtle details and tactile beauty.
+          </p>
         </div>
-
-        <div className="texture-scroll-indicator">
-          <div className="texture-scroll-bar" ref={indicatorRef}></div>
-        </div>
+        <img src={photos[2]} alt="Texture 3" onClick={() => handleImageClick(2)} loading="lazy" />
       </div>
 
-      {/* Lightbox */}
-      {selectedImage && (
-        <div className="lightbox" onClick={() => setSelectedImage(null)}>
-<img loading="lazy" src={selectedImage} alt="Enlarged view" />
+      <div className="texture-paired">
+        <img src={photos[3]} alt="Texture 4" onClick={() => handleImageClick(3)} loading="lazy" />
+        <img src={photos[4]} alt="Texture 5" onClick={() => handleImageClick(4)} loading="lazy" />
+      </div>
+
+      <div className="texture-grid">
+        {photos.slice(5).map((src, index) => (
+          <img
+            key={index + 5}
+            src={src}
+            alt={`Texture ${index + 6}`}
+            onClick={() => handleImageClick(index + 5)}
+            className="grid-img"
+            loading="lazy"
+          />
+        ))}
+      </div>
+
+      {isEnlarged && (
+        <div className="fullscreen-overlay" onClick={() => setIsEnlarged(false)}>
+          <img
+            src={photos[currentIndex]}
+            alt="Full view"
+            className="fullscreen-image"
+            onClick={(e) => e.stopPropagation()}
+            loading="lazy"
+          />
+          <button className="close-button" onClick={() => setIsEnlarged(false)}>×</button>
+          <button className="arrow left" onClick={(e) => { e.stopPropagation(); handlePrev(); }}>❮</button>
+          <button className="arrow right" onClick={(e) => { e.stopPropagation(); handleNext(); }}>❯</button>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

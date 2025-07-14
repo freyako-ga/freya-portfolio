@@ -3,7 +3,9 @@ import "./Commercial.css";
 
 const photos = [
   "/img/comm244.jpg",
+  "/img/tene7.jpg",
   "/img/dj.jpg",
+  "/img/comm36.jpg",
   "/img/comm7.jpg",
   "/img/comm1.jpg",
   "/img/comm12.jpg",
@@ -13,6 +15,7 @@ const photos = [
   "/img/comm17.jpg",
   "/img/comm18.jpg",
   "/img/comm19.jpg",
+  "/img/comm37.jpg",
   "/img/comm20.jpg",
   "/img/comm21.jpg",
   "/img/comm22.jpg",
@@ -20,7 +23,7 @@ const photos = [
   "/img/comm25.jpg",
   "/img/comm26.jpg",
   "/img/yoga.jpg",
-  "/img/ims.jpg",
+  "/img/comm32.jpg",
   "/img/ims2.jpg",
   "/img/ims3.jpg",
   "/img/comm33.jpg",
@@ -28,7 +31,6 @@ const photos = [
   "/img/ims5.jpg",
   "/img/comm4.jpg",
   "/img/comm8.jpg",
-  "/img/comm32.jpg",
   "/img/comm31.jpg",
   "/img/comm9.jpg",
   "/img/market16.jpg",
@@ -43,6 +45,7 @@ const photos = [
   "/img/comm11.jpg",
   "/img/mara.jpg",
   "/img/comm30.jpg",
+  "/img/ims.jpg",
 ];
 
 const CommercialGallery = () => {
@@ -51,7 +54,7 @@ const CommercialGallery = () => {
   return (
     <div className="commercial-page">
       <div className="hero-image">
-      <img loading="lazy" src="/img/comm246.jpg" alt="Hero commercial" />
+      <img loading="lazy" src="/img/tene6.jpg" alt="Hero commercial" />
       </div>
 
       <div className="commercial-description">

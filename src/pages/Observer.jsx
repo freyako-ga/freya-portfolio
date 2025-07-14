@@ -10,6 +10,7 @@ const photos = [
   "/img/anza5.jpg",
   "/img/anza6.jpg",
   "/img/anza7.jpg",
+  "/img/observer3.jpg",
   "/img/anza8.jpg",
   "/img/anza9.jpg",
   "/img/anza10.jpg",

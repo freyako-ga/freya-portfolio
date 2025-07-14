@@ -1,21 +1,54 @@
+// import "./About.css";
+
+// function Homepage() {
+//   return (
+//     <div className="about-section">
+//        <h2 className="freya-intro">Hi, I’m Freya- </h2>
+//       <div className="about-left">
+//         <p>           <br /><br />
+// a photographer and visual storyteller drawn to capturing the fleeting, the emotive, and the quietly vivid.
+// My journey started with 35mm film. The tactility, the anticipation, the depth of colour — it all taught me how to see. Film shaped my style in a way that still guides everything I shoot today. While I now shoot mainly on Fujifilm digital, film still remains at the core of my approach: soft light, imperfect edges and moments that feel honest rather than forced. 
+// Photography, for me, is about preserving feelings — not just faces or places. I’m interested in the in-between moments, the shift in light, the unspoken things that pass between people. Every photo is an attempt to translate emotion into a visual form, to tell stories through palette, timing, and texture.
+// This website was built and coded by me — a space that reflects the same care and intention I bring to my photography. Everything here is a piece of how I see and feel the world.
+//         </p>
+//         <p>
+//         If you’re interested in prints, collaborations or photoshoots, feel free to get in touch at freyako96@gmail.com — all prints are produced on high-gloss paper to bring out the richness and depth of each image. Thanks for visiting — I hope you find something here that stays with you.
+//         </p>
+//       </div>
+//       <div className="about-right">
+//       <img loading="lazy" src="/img/about3.jpg" alt="Freya" />
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Homepage;
+
+
 import "./About.css";
 
 function Homepage() {
   return (
     <div className="about-section">
       <div className="about-left">
-        <p>
-          From call-sheets and campaign imagery to spa menus and short films, we are obsessed with all aspects of creative.
-          A thread running through our work is that <em>everything</em> matters. This attention to detail means that when
-          we’re building a photography brief, we’re drafting it with a story front of mind and a photographer carefully
-          chosen not just for their visuals but also for their values.
+        <h2 className="freya-intro">Hi! I’m Freya,</h2>
+
+        <p className="about-text">
+          A photographer and visual storyteller drawn to capturing the fleeting, the emotive, and the quietly vivid.
+          My journey started with 35mm film. The tactility, the anticipation, the depth of colour — it all taught me how to see. Film shaped my style in a way that still guides everything I shoot today. While I now shoot mainly on Fujifilm digital, film still remains at the core of my approach: soft light, imperfect edges and moments that feel honest rather than forced.
+          <br /><br />
+          Photography, for me, is about preserving feelings — not just faces or places. I’m interested in the in-between moments, the shift in light, the unspoken things that pass between people. Every photo is an attempt to translate emotion into a visual form, to tell stories through palette, timing, and texture.
+          <br /><br />
+          This website was built and coded by me — a space that reflects the same care and intention I bring to my photography. Everything here is a piece of how I see and feel the world.
         </p>
-        <p>
-          Storytelling is central to our work and this naturally leads us to soulful clients and meaningful causes. We’re...
+
+        <p className="print-info">
+          If you’re interested in prints, collaborations or photoshoots, feel free to get in touch at <a href="mailto:freyako96@gmail.com">freyako96@gmail.com</a> — all prints are produced on high-gloss paper to bring out the richness and depth of each image. Thanks for visiting — I hope you find something here that stays with you.
         </p>
       </div>
+
       <div className="about-right">
-      <img loading="lazy" src="/img/about3.jpg" alt="Freya" />
+        <img loading="lazy" src="/img/about6.jpg" alt="Freya" />
       </div>
     </div>
   );
