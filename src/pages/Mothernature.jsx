@@ -6,20 +6,24 @@ import LazyImage from "../components/LazyImage";
 const photos = [
   "/img/nature3.jpg",
   "/img/nature7.jpg",
+  "/img/nature21.jpg",
+  "/img/nature22.jpg",
+
+  "/img/ice2.jpg",
   "/img/ice6.jpg",
   "/img/ice4.jpg", 
   "/img/nature8.jpg",
-  "/img/nature9.jpg",
-  "/img/nature10.jpg",
   "/img/nature12.jpg",
   "/img/nature13.jpg",
 
   "/img/nature4.jpg",
   "/img/nature5.jpg",
-  "/img/ice2.jpg",
+  "/img/nature26.jpg",
   "/img/text32.jpg",
-  "/img/ice3.jpg",
-  "/img/ice5.jpg",
+  "/img/nature19.jpg",
+  "/img/nature20.jpg",
+  // "/img/ice3.jpg",
+  // "/img/ice5.jpg",
 
   "/img/ice1.jpg",
   "/img/ice7.jpg",
@@ -33,7 +37,22 @@ const photos = [
   "/img/nature14.jpg",
   "/img/lanzz.jpg",
   "/img/ice9.jpg",
+  "/img/ice13.jpg",
   "/img/fes40.jpg",
+
+  "/img/greenhouse.jpg",
+  "/img/greenery.jpg",
+
+  "/img/greenhouse1.jpg",
+  "/img/greenhouse2.jpg",
+  "/img/nature23.jpg",
+  "/img/nature24.jpg",
+  "/img/nature25.jpg",
+  "/img/flowers2.jpg",
+  "/img/nature9.jpg",
+  "/img/urban.jpg",
+  "/img/nature10.jpg",
+
 ];
 
 const MothernatureGallery = () => {

@@ -9,6 +9,9 @@ const photos = [
   "/img/boy.jpg",
   "/img/tag23.jpg",
   "/img/m14.jpg",
+  "/img/mor.jpg",
+  "/img/mor1.jpg",
+  "/img/sofa.jpg",
   "/img/tag45.jpg",
   "/img/text25.jpg",
   "/img/tag37.jpg",
@@ -20,7 +23,7 @@ const photos = [
   // "/img/tag7.jpg",
   "/img/fes1.jpg",
   "/img/m5.jpg",
-  "/img/tag34.jpg",
+  "/img/para.jpg",
   "/img/tag52.jpg",
   "/img/m21.jpg",
   "/img/m9.jpg",
@@ -50,7 +53,7 @@ const photos = [
   "/img/football.jpg",
   "/img/tag43.jpg",
     "/img/fes10.jpg",
-  "/img/tag42.jpg",
+    "/img/swimmingpool.jpg",
   "/img/tag51.jpg",
   "/img/louis.jpg",
   // "/img/imiou.jpg",
@@ -61,6 +64,8 @@ const photos = [
   "/img/tag50.jpg",
   "/img/fes28.jpg",
   "/img/market13.jpg",
+  "/img/tag42.jpg",
+
   // "/img/market3.jpg",
   // "/img/market19.jpg",
   // // "/img/market8.jpg",
@@ -76,7 +81,7 @@ const photos = [
 const MoroccoGallery = () => {
   const [isEnlarged, setIsEnlarged] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const fadingImages = ["/img/m14.jpg", "/img/tag31.jpg", "/img/m15.jpg", "/img/m27.jpg", "/img/m9.jpg","/img/m26.jpg", "/img/football.jpg",];
+  const fadingImages = ["/img/m14.jpg",   "/img/swimmingpool.jpg", "/img/tag31.jpg", "/img/m15.jpg",  "/img/m9.jpg"];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {

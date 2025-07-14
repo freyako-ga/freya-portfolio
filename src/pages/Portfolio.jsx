@@ -4,11 +4,11 @@ import LazyImage from "../components/LazyImage";
 function Portfolio() {
   const projects = [
     { src: "/img/tag9.jpg", title: "Skatepark", link: "/Skatepark" },
-    { src: "/img/ims7.jpg", title: "Observer", link: "/Observer" },
+    { src: "/img/text32.jpg", title: "Mother Nature", link: "/Mothernature" },
     { src: "/img/tag22.jpg", title: "Blues & oranges", link: "/Blues" },
     { src: "/img/m14.jpg", title: "Habibi", link: "/Morocco" },
     { src: "/img/text19.jpg", title: "Texture", link: "/Texture" },
-    { src: "/img/text32.jpg", title: "Mother Nature", link: "/Mothernature" },
+    { src: "/img/ims7.jpg", title: "Observer", link: "/Observer" },
     { src: "/img/ita9.jpg", title: "PRONTO?", link: "/Italia" },
     { src: "/img/comm10.jpg", title: "Commercial", link: "/Commercial" },
     { src: "/img/market9.jpg", title: "People", link: "/People" },
