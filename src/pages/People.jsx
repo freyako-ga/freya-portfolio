@@ -1,4 +1,4 @@
-import "./people.css";
+import "./People.css";
 
 const photos = [
   "/img/leah.jpg",
