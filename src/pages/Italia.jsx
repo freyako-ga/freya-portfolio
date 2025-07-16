@@ -60,7 +60,7 @@ const ItaliaGallery = () => {
   return (
     <div className="italia-page">
       {/* Fading Hero Section */}
-      <div className="fading-hero-container">
+      <div className="fading-italia-hero-container">
         {fadingImages.map((src, index) => (
           <LazyImage
  loading="lazy"

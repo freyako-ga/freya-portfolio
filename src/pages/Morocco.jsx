@@ -107,7 +107,7 @@ const MoroccoGallery = () => {
 
   return (
     <div className="morocco-page">
-      <div className="fading-hero-container">
+      <div className="fading-morocco-hero-container">
         {fadingImages.map((src, index) => (
           <LazyImage
  loading="lazy"
