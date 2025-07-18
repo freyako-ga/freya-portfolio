@@ -1,51 +1,3 @@
-/* .about-section {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 80px;
-    background-color: #8B0000;
-    color: white;
-    gap: 60px;
-  }
-  
-  .freya-intro {
-    font-size: 1.8rem; 
-    font-weight: bold;
-    margin-bottom: 2rem;
-    line-height: 1.4;
-  }
-  .about-left {
-    flex: 1;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.6;
-    max-width: 600px;
-  }
-  
-  .about-left em {
-    font-style: italic;
-  }
-  
-  .about-right {
-    flex: 1;
-  }
-  
-  .about-right img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    border-radius: 0;
-  }
-  
-
-  @media (max-width: 900px) {
-    .about-section {
-      flex-direction: column;
-      padding: 40px 20px;
-    }
-} */
 
 
 .about-section {
@@ -74,6 +26,7 @@
 .about-right img {
   max-width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
 .freya-intro {
@@ -99,4 +52,29 @@
 .print-info a {
   color: #2ee59d;
   text-decoration: underline;
+}
+
+
+@media (max-width: 900px) {
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-left,
+  .about-right {
+    max-width: 100%;
+    padding: 0; 
+  }
+
+  .about-right img {
+    max-width: 500px;
+    width: 100%;
+    padding-top: 40px;
+  }
+
+  .about-left {
+    padding-top: 20px;
+  }
 }

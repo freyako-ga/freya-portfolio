@@ -5,7 +5,7 @@ function Homepage() {
     <>
       <div className="content-wrapper">
         <div className="inner-wrapper">
-          <div className="left-image">
+          <div className="homepage-left-image">
             <LazyImage
  src="/img/m22.jpg" alt="Description" />
           </div>

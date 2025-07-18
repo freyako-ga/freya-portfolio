@@ -26,8 +26,10 @@ function Navbar() {
       </ul>
 
       <div className="navbar-contact">
-        <button>Contact</button>
-      </div>
+  <a href="mailto:freyako96@gmail.com">
+    <button>Contact</button>
+  </a>
+</div>
     </nav>
   );
 }
