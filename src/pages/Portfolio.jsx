@@ -3,7 +3,7 @@ import LazyImage from "../components/LazyImage";
 
 function Portfolio() {
   const projects = [
-    { src: "/img/skatepark31.jpg", title: "Skatepark", link: "/Skatepark" },
+    { src: "/img/tag9.jpg", title: "Skatepark", link: "/Skatepark" },
     { src: "/img/nature7.jpg", title: "Mother Nature", link: "/Mothernature" },
     { src: "/img/tag22.jpg", title: "Blues & oranges", link: "/Blues" },
     { src: "/img/m14.jpg", title: "Habibi", link: "/Morocco" },
