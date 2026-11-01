@@ -111,7 +111,6 @@ const MoroccoGallery = () => {
         {fadingImages.map((src, index) => (
           <LazyImage
  loading="lazy"
-
             key={index}
             src={src}
             className={`fading-hero-image ${index === currentImageIndex ? "active" : ""}`}

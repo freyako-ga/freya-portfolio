@@ -72,7 +72,7 @@ const SkateparkGallery = () => {
       <div className="skatepark-paired">
         <div className="skatepark-description">
           <p>
-            Perched on a hilltop overlooking the Atlantic, the Taghazout Skatepark is a vibrant collision of movement, color, and community...
+            Perched on a hilltop overlooking the Atlantic, the Taghazout Skatepark is a vibrant collision of movement, colour, and community...
           </p>
         </div>
         <LazyImage
